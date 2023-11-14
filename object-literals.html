@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Literals</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Object literals
+        let course = "BSSE";
+        let fname = "Josh";
+        let lname = "Luke";
+        let myobj = {
+            show(fname, lname) {
+                let fullname = fname + " " + lname;
+                return ` ${fullname} - ${course} `
+            }
+        }
+        document.write(myobj.show(fname, lname, course));
+
+
+
+
+
+
+        // let n = "Student";
+        // let age = 30;
+        // let myobj = {
+        //     age: 78,
+        //     [n + "name"]: "John",
+        //     detail() {
+        //         return `${this.Studentname} - ${this.age}`;
+        //     }
+        // };
+        // console.log(myobj);
+        // console.log(myobj.detail());
+
+
+
+
+        // can concat key names by declaring and then concating
+
+        // let name = "Same";
+        // let age = 30;
+        // let myobj = {
+        //     name,
+        //     age,
+        // };
+        // console.log(myobj);
+
+        // let n = "Student";
+        // let age = 30;
+        // let myobj = {
+        //     [n + "name"]: "John",
+
+        // };
+        // console.log(myobj);
+    </script>
+</body>
+
+</html>

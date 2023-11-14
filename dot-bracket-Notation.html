@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracket & Dot Notation</title>
+</head>
+
+<body>
+
+    <body>
+
+        <h4>Bracket & Dot Notation</h4>
+
+
+        <script>
+            // To Add property in the object
+            const person = {
+                Name: "Harris",
+                Role: "Developer",
+                Age: 30
+            };
+            // we used bracket notation here
+            person["Name"] = "Josh";
+            // we used .notation here =>
+            // person.Name = "Josh";
+            for (let key in person) {
+                document.write(`${key} : ${person[key]} <br>`)
+            }
+
+
+
+
+            // TO UPDATE OBJECT PROPERTIES USING DOT AND BRACKET NOTATION
+            // const person = {
+            //     name: "John",
+            //     age: 34
+            // };
+            // // using dot notation
+            // person.name = "Justin";
+            // person["name"] = "Justin";
+            // console.log(person);
+
+            // // using bracket notation
+
+            // person.name = "Justin";
+            // person[name] = "Justin";
+            // console.log(person);
+        </script>
+    </body>
+
+</html>

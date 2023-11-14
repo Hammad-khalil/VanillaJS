@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetching API</title>
+</head>
+<style>
+    body {
+        background: url(/img//ghost.jpg);
+        background-repeat: no-repeat;
+        width: 100%;
+        margin: 0%;
+        padding: 0%;
+    }
+
+    h1 {
+        text-align: center;
+        color: white;
+        font-family: cursive;
+    }
+
+    h3 {
+        text-align: center;
+        color: white;
+        font-family: cursive;
+    }
+
+    #btn {
+        position: absolute;
+        left: 80%;
+        top: 37%;
+
+        display: inline-block;
+        outline: none;
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 3px;
+        padding: 12px 24px;
+        border: 0;
+        color: #fff;
+        background: #ff5000;
+        line-height: 1.15;
+        font-size: 16px;
+
+    }
+
+    #btn:hover {
+        transition: all .1s ease;
+        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+    }
+
+
+    .content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .top {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<body>
+    <div class="top">
+        <h1>Wanna Hear a jOKE ? 🥶</h1>
+    </div>
+    <div class="content">
+        <h1 id="quote"></h1>
+        <h3 id="show" style="visibility: hidden;"></h3>
+    </div>
+    <button id="btn" onclick="change()">Click To know :)</button>
+    <script>
+
+        let x = document.getElementById("quote");
+        let y = document.getElementById("show");
+        fetch("https://official-joke-api.appspot.com/random_ten")
+            .then((response) => { return response.json() })
+            .then((result) => {
+                x.textContent = result[0].setup;
+                console.log(result[0].punchline);
+                y.textContent = result[0].punchline;
+
+
+            })
+        function change() {
+            y.style.visibility = "visible";
+        }
+    </script>
+</body>
+
+</html>

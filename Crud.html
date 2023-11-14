@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        header {
+            background-color: orange;
+            color: white;
+            filter: invert(100%);
+        }
+
+        .input-group {
+            width: 1113px;
+            position: relative;
+            right: 172px;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #edit {
+            position: relative;
+            left: 400px;
+        }
+
+        #button {
+            position: relative;
+            left: 2px;
+        }
+
+        #crudid {
+            text-align: center;
+            color: tomato;
+            font-family: cursive;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-primary navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <div>
+        <h1 id="crudid">CRUD</h1>
+    </div>
+    <main>
+        <div class="container mt-5 col-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Chapter Name" aria-label="Add List"
+                    aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button" id="add-btn">ADD</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <ul class="list-group" id="parentList">
+                <li class="list-group-item">
+                    <div id="buttons">
+
+
+                        <h3>Chapter 1</h3>
+                        <button class="btn btn-warning" id="edit" onclick="editchapter(this)">Edit</button>
+                        <button class="btn btn-danger" id="removebtn" onclick="removechapter(this)">Remove</button>
+                </li>
+        </div>
+        </ul>
+        </div>
+    </main>
+    <script>
+
+        let button1 = document.getElementById("add-btn");
+        button1.addEventListener("click", grab)
+        function grab(e) {
+            let button1 = e.currentTarget;
+            let inputdata = button1.previousElementSibling;
+            currentvalue = inputdata.value;
+            console.log(currentvalue);
+
+            let newLi = document.createElement("li");
+            newLi.classList.add("list-group-item");
+            newLi.innerHTML = `
+                <li class="list-group-item">
+                    <div id="buttons">
+
+
+                        <h3>${currentvalue}</h3>
+                        <button class="btn btn-warning" id="edit" onclick="editchapter(this)">Edit</button>
+                        <button class="btn btn-danger" id="removebtn" onclick="removechapter(this)">Remove</button>
+                </li>
+        </div>
+        `
+
+            let parentList = document.getElementById("parentList");
+            parentList.append(newLi);
+
+        }
+
+        function removechapter(deleteelement) {
+            console.log(deleteelement.parentElement.remove());
+            deleteelement.parentElement.remove();
+        }
+
+        function editchapter(element) {
+            console.log(element.previousElementSibling);
+
+            element.previousElementSibling.innerHTML = prompt("Enter New Value");
+        }
+        let totallists = document.getElementById("list-group-item");
+        console.log(totallists);
+
+
+        // function editchapter(element) {
+        //     console.log(element.previousElementSibling);
+        //     let inputvalue = element.previousElementSibling.value;
+        //     console.log(inputvalue);
+        //     element.previousElementSibling.innerHTML = prompt("Enter Your Value");
+        // }
+
+
+
+
+
+
+
+
+
+
+
+        // let button = document.getElementById("add-btn");
+        // button.addEventListener("click", addchapter)
+        // function addchapter(e) {
+        //     let currentbtn = e.currentTarget;
+        //     let currentInput = currentbtn.previousElementSibling;
+        //     console.log(currentInput.value);
+
+        //     let newLi = document.createElement("li");
+        //     newLi.classList.add("list-group-item");
+        //     newLi.textContent = currentInput.value;
+
+        //     let parentList = document.getElementById("parentList")
+        //     parentList.appendChild(newLi);
+
+        // }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

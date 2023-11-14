@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in / Objects</title>
+</head>
+
+<body>
+
+
+    <h1>For in should be used always on Objects to iterate </h1>
+
+
+    <script>
+
+        const person = {
+            name: "Hammad",
+            city: "Rawalpindi",
+            Designation: "Developer",
+        }
+
+        for (let key in person) {
+            if (person.hasOwnProperty(key)) {
+                console.log(`${key} : ${person[key]}`)
+            }
+        }
+    </script>
+</body>
+
+</html>
